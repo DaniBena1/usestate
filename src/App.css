@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background-image: url(https://www.cnet.com/a/img/resize/de092f96e7ea34878af78725a167ee8f95a84731/hub/2014/12/01/9bcaf58e-5f17-46b9-82a1-546898aad693/count.jpg?auto=webp&width=1200);
+  background-repeat: round;
+  height: 600px;
 }
 
 .Counter{
@@ -10,9 +13,9 @@
   height: 210px;
   width: 550px;
   text-align: center;
-  margin-left: 120px;
+  margin-left: 800px;
   margin-right: 120px;
-
+ 
 }
 
 .addNum{
