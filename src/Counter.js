@@ -22,9 +22,9 @@ function Counter() {
       <div className="Counter">
         <h1>Counter</h1>
         <p>Counter is at {count}</p>
-        <button onClick={incr}>Click to add 1 to counter</button>
+        <button onClick={incr} className = "addNum">Click to add 1 to counter</button>
         <p></p>
-        <button onClick={reset}>Reset counter</button>
+        <button onClick={reset} className = "reset">Reset counter</button>
       </div>
     );
   }
