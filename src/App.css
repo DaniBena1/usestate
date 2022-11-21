@@ -10,7 +10,9 @@
   height: 210px;
   width: 550px;
   text-align: center;
-  
+  margin-left: 120px;
+  margin-right: 120px;
+
 }
 
 .addNum{
