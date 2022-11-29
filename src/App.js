@@ -5,24 +5,32 @@ import { useState } from 'react';
 
 function App() {
   const [delta, setDelta] = useState(1)
+  const [maxCounter, setMaxCounter] = useState(10)
+  const [reset,setReset] = useState(false)
+  
   function handleDelta(event){
     setDelta(Number(event.target.value))
   }
 
-  const [max, setMax] = useState(1)
-  function maxValue(event){
-    setMax(Number(event.target.value))
+  function handleMax(event){
+    setMaxCounter(Number(event.target.value))
+  }
+
+  function getReset(data){
+    // data gets the value "true" from the son (Counter.js, where getReset(true))
+      console.log(data)
+      setReset(data)
   }
 
   return (
     <div className="App">
       <input type = "number" value = {delta} onChange = {handleDelta}/>
       <p>
-        max: <input type = "number" value = {max} onChange = {maxValue}/>
+        max: <input type = "number" value = {maxCounter} onChange = {handleMax}/>
       </p>
       
-      <Counter delta = {delta} max = {max}/>
-      <Counter delta = {delta} max = {max}/>
+      <Counter delta = {delta} maxCounter = {maxCounter} getReset = {getReset} needToReset = {reset}/>
+      <Counter delta = {delta} maxCounter = {maxCounter} getReset = {getReset} needToReset = {reset}/>
       
     </div>
 
