@@ -7,7 +7,14 @@ function App() {
   const [delta, setDelta] = useState(1)
   const [maxCounter, setMaxCounter] = useState(10)
   const [reset,setReset] = useState(false)
-  
+  const [maxNumber, setMaxNumber] = useState(0)
+
+  function updateMaxNumber(number){
+    if (number > maxNumber) {
+      setMaxNumber(number)
+    }
+  }
+
   function handleDelta(event){
     setDelta(Number(event.target.value))
   }
@@ -26,11 +33,14 @@ function App() {
     <div className="App">
       <input type = "number" value = {delta} onChange = {handleDelta}/>
       <p>
-        max: <input type = "number" value = {maxCounter} onChange = {handleMax}/>
+        limit: <input type = "number" value = {maxCounter} onChange = {handleMax}/>
+      </p>
+      <p>
+        max number so far: {maxNumber}
       </p>
       
-      <Counter delta = {delta} maxCounter = {maxCounter} getReset = {getReset} needToReset = {reset}/>
-      <Counter delta = {delta} maxCounter = {maxCounter} getReset = {getReset} needToReset = {reset}/>
+      <Counter delta = {delta} maxCounter = {maxCounter} getReset = {getReset} needToReset = {reset} updateMaxNumber = {updateMaxNumber} />
+      <Counter delta = {delta} maxCounter = {maxCounter} getReset = {getReset} needToReset = {reset} updateMaxNumber = {updateMaxNumber} />
       
     </div>
 

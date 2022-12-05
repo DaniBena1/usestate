@@ -7,9 +7,10 @@ function Counter(props) {
     const {maxCounter} = props
     const {getReset} = props
     const {needToReset} = props
+    const {updateMaxNumber} = props
     // props is an object
     const [count, setCount] = useState(1)
-    
+
     useEffect(()=>{
       if(needToReset) {
         setCount(0)
@@ -21,10 +22,14 @@ function Counter(props) {
     function incr(){
       setCount(
           function(oldCount){
-            if ((oldCount + delta) >= maxCounter){
+            let result = oldCount + delta
+            if (result >= maxCounter){
               return 0
             }
-            return oldCount + delta
+            else {
+              updateMaxNumber(result)
+            }
+            return result
             
           }
       )  
@@ -34,6 +39,8 @@ function Counter(props) {
       getReset(true)
       // setCount(0)
     }
+
+
 
     return (
       <div className="Counter">
